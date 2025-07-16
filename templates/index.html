@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Movie Recommender</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex bg-slate-950 text-white min-h-screen flex-col items-center py-10">
+
+  <h1 class="text-4xl font-bold mb-8">🎬 Movie Recommender System</h1>
+
+  <form method="POST" class=" max-w-xl flex flex-col items-center gap-4">
+    <select name="movie" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-600">
+      {% for movie in movies %}
+        <option value="{{ movie }}" {% if movie == selected_movie %}selected{% endif %}>{{ movie }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded text-lg transition">
+      Recommend Movies
+    </button>
+  </form>
+
+  {% if recommended %}
+    <div class="mt-10 w-auto grid grid-cols-5 gap-2">
+      {% for i in range(recommended|length) %}
+        <div class="bg-gray-900 rounded-lg overflow-hidden w-60 shadow-md p-2 flex flex-col items-center">
+          <img src="{{ posters[i] }}" alt="{{ recommended[i] }}" class="mt-6 h-72 object-cover rounded">
+          <p class="mt-4 mb-4 text-center font-semibold">{{ recommended[i] }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</body>
+</html>
