@@ -25,6 +25,6 @@ This is my first mini Project based on Recommender Systems.I used Content-based 
 #### 📐 Cosine Similarity Formula:
 - Cosine similarity between two vectors A and B is given by:
 - cosine similarity(A, B) = (A . B) / (||A|| * ||B||)
-
-
-Where:
+- Where:
+  - A . B is the dot product of vectors A and B.
+  - ||A|| and ||B|| are the magnitudes (lengths) of vectors A and B.
