@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request # type: ignore
-import pandas as pd # type: ignore
+from flask import Flask, render_template, request 
+import pandas as pd 
 import pickle
-import requests # type: ignore
+import requests
 
 app = Flask(__name__)
 
